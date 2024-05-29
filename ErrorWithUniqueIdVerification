@@ -1,0 +1,34 @@
+# bank users, info balance everything provided.
+# Ask program for options. create user(check if user exit) if update user id(check if exist) balance(check not to be negative),
+# if result = 0(warning! might deactivate the account, are you sure you want to procceed?)---(if no, ask for new amount ot leave). name etc.
+def bank_program():
+    directory = {0: {'name': 'name',
+                     'balance': 000},
+                 1: {'name': 'abc',
+                     'balance': 100}}
+    action = input("What would you like to do today? (create, check balance, update existing id, update balance)")
+    if action.strip().lower() == "create":
+        usr_id = input("Please enter Id: ")
+        ur_id = int(usr_id)
+        while True:
+            if ur_id in directory:
+                print("This id is already taken, try again")
+                usr_id = input("Id: ")
+
+            name = input("What is the name of the account holder? ")
+            balance = input("Balance with which user starting the account: ")
+            directory.update({usr_id: {'name': name,
+                                       'balance': balance}})
+            print(directory)
+    elif action.lower() == "check balance":
+        print("ch")
+    elif action.lower() == "update balance":
+        print("up")
+    elif action.lower() == "update existing id":
+        print("hj")
+    else:
+        print("invalid input, quitting program")
+        quit()
+
+
+bank_program()
